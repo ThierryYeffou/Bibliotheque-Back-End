@@ -22,6 +22,14 @@ module.exports = (app) =>{
             }
         );
     }
-
-    return { create, close };
+    function list(req,res){
+        Musique.find({}, function (err, borrowing) {
+            if (err) {
+              res.send(err);
+            } else {
+              res.send(borrowing);
+            }
+        })
+    };
+    return { create, close, list } ;
 };
