@@ -5,14 +5,25 @@ module.exports = (app) =>{
 
     // Fonction show pour afficher un Livre : 
     function getById(req, res) {
-    Musique.findById(req.body.id, function (err, docs) {
+        Musique.findById(req.body.id, function (err, docs) {
 
-        if(err) res.send(err);  
-        else res.send(docs);
+            if(err) res.send(err);  
+            else res.send(docs);
 
-    });
+        })
+    }
+
+    // Fonction show pour afficher un Emprunt : 
+    function show(req, res) {
+
+        Borrowing.findById(req.body.id, function (err, docs) {
+
+            if(err) res.send(err);  
+            else res.send(docs);
+
+         });
+    }
    
-  }
     
     
     function create(req, res){
@@ -40,7 +51,7 @@ module.exports = (app) =>{
 
 
     function list(req,res){
-        Musique.find({}, function (err, borrowing) {
+        Borrowing.find({}, function (err, borrowing) {
             if (err) {
               res.send(err);
             } else {
@@ -48,5 +59,5 @@ module.exports = (app) =>{
             }
         })
     };
-    return { create, close, list } ;
+    return { create, close, list, show} ;
 };

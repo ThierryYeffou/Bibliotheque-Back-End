@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 module.exports = (app) => {
     mongoose.connect(
-        "mongodb://localhost:27017/fullstack",
+        "mongodb://localhost:27017/bibliotheque",
         {
             useNewUrlParser: true,
             useUnifiedTopology: true
