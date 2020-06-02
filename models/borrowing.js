@@ -5,24 +5,16 @@ var borrowingSchema = new Schema({
     books : [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Book',
-            required: true
+            ref: 'Book'
         },
     ],
-    borrowingDate : {
-        type: Date,
-        required: true
-    },
-    maxReturnDate :  {
-        type: Date,
-        required: true
-    },
+    borrowingDate : Date,
+    maxReturnDate : Date,
     realReturnDate: Date,
     subscriber: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Subscriber',
-            required: true
+            ref: 'Subscriber'
         },
     ],
 });
