@@ -1,5 +1,22 @@
 module.exports = (app) =>{
+
     let Borrowing = require('../models/Borrowing');
+
+
+    // Fonction show pour afficher un Livre : 
+    function getById(req, res) {
+
+    Musique.findById(req.body.id, function (err, docs) {
+
+        if(err) res.send(err);  
+        else res.send(docs);
+
+
+    });
+   
+  }
+    
+    
     function create(req, res){
         let newBorrowing = req.body
         Borrowing.create(newBorrowing, (err, borrowing) =>{
