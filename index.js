@@ -4,11 +4,10 @@ const port = 3000;
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+require("./database")(app);
 require("./controllers")(app);
 require("./routes")(app);
-require("./database")(app);
 
-app.get('/',(req,res)=>res.send('hello world !'))
 
 require("./models")(app);
 
