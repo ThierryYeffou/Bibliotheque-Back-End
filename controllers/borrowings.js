@@ -4,9 +4,9 @@ module.exports = (app) =>{
 
 
     // Fonction show pour afficher un Livre : 
-    function getById(req, res) {
+    function show(req, res) {
 
-    Musique.findById(req.body.id, function (err, docs) {
+    Borrowing.findById(req.body.id, function (err, docs) {
 
         if(err) res.send(err);  
         else res.send(docs);
