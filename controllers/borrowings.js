@@ -5,26 +5,13 @@ module.exports = (app) =>{
 
     // Fonction show pour afficher un un emprunt : 
     function show(req, res) {
-        Musique.findById(req.body.id, function (err, docs) {
+        Borrowing.findById(req.body.id, function (err, docs) {
 
             if(err) res.send(err);  
             else res.send(docs);
 
         })
     }
-
-    // Fonction show pour afficher un Emprunt : 
-    function show(req, res) {
-
-        Borrowing.findById(req.body.id, function (err, docs) {
-
-            if(err) res.send(err);  
-            else res.send(docs);
-
-         });
-    }
-   
-    
     
     function create(req, res){
         let newBorrowing = req.body
@@ -40,7 +27,7 @@ module.exports = (app) =>{
         Borrowing.findByIdAndUpdate(
             req.body.id,
             {
-                realReturnDate: req.body.realReturnDate
+                $set: req.body.realReturnDate
             },
             (err, data) => {
                 if (err) console.log(err);
