@@ -5,7 +5,8 @@ var borrowingSchema = new Schema({
     books : [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Book'
+            ref: 'Book',
+            required: true
         },
     ],
     borrowingDate : {
@@ -20,7 +21,8 @@ var borrowingSchema = new Schema({
     subscriber: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Subscriber'
+            ref: 'Subscriber',
+            required: true
         },
     ],
 });
