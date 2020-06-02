@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/ThierryYeffou/Full-application/issues"
   },
-  "homepage": "https://github.com/ThierryYeffou/Full-application#readme"
+  "homepage": "https://github.com/ThierryYeffou/Full-application#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.16"
+  }
 }
