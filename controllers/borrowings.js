@@ -5,12 +5,10 @@ module.exports = (app) =>{
 
     // Fonction show pour afficher un Livre : 
     function getById(req, res) {
-
     Musique.findById(req.body.id, function (err, docs) {
 
         if(err) res.send(err);  
         else res.send(docs);
-
 
     });
    
