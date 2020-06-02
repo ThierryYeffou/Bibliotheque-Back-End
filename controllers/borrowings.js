@@ -12,19 +12,6 @@ module.exports = (app) =>{
 
         })
     }
-
-    // Fonction show pour afficher un Emprunt : 
-    function show(req, res) {
-
-        Borrowing.findById(req.body.id, function (err, docs) {
-
-            if(err) res.send(err);  
-            else res.send(docs);
-
-         });
-    }
-   
-    
     
     function create(req, res){
         let newBorrowing = req.body
