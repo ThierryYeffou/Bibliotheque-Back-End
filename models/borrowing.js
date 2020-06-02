@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var borrowingSchema = new Schema({
-    books : [
+    /*books : [
         {
             type: Schema.Types.ObjectId,
             ref: 'Book',
             required: true
         },
-    ],
+    ],*/
     borrowingDate : {
         type: Date,
         required: true
@@ -18,13 +18,13 @@ var borrowingSchema = new Schema({
         required: true
     },
     realReturnDate: Date,
-    subscriber: [
+    /*subscriber: [
         {
             type: Schema.Types.ObjectId,
             ref: 'Subscriber',
             required: true
         },
-    ],
+    ],*/
 });
 
 module.exports = mongoose.model("Borrowing", borrowingSchema);
