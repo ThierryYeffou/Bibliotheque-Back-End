@@ -8,8 +8,14 @@ var borrowingSchema = new Schema({
             ref: 'Book'
         },
     ],
-    borrowingDate : Date,
-    maxReturnDate : Date,
+    borrowingDate : {
+        type: Date,
+        required: true
+    },
+    maxReturnDate :  {
+        type: Date,
+        required: true
+    },
     realReturnDate: Date,
     subscriber: [
         {
