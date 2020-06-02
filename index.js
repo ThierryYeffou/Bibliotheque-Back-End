@@ -9,7 +9,6 @@ require("./models")(app);
 require("./controllers")(app);
 require("./routes")(app);
 
-app.get('/',(req,res)=>res.send('hello world !'))
 
 
 
