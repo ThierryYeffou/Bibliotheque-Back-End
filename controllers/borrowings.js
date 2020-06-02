@@ -3,14 +3,13 @@ module.exports = (app) =>{
     let Borrowing = require('../models/Borrowing');
 
 
-    // Fonction show pour afficher un Livre : 
+    // Fonction show pour afficher un Emprunt : 
     function show(req, res) {
 
-    Borrowing.findById(req.body.id, function (err, docs) {
+        Borrowing.findById(req.body.id, function (err, docs) {
 
-        if(err) res.send(err);  
-        else res.send(docs);
-
+            if(err) res.send(err);  
+            else res.send(docs);
 
     });
    
@@ -42,7 +41,7 @@ module.exports = (app) =>{
 
 
     function list(req,res){
-        Musique.find({}, function (err, borrowing) {
+        Borrowing.find({}, function (err, borrowing) {
             if (err) {
               res.send(err);
             } else {
@@ -50,5 +49,5 @@ module.exports = (app) =>{
             }
         })
     };
-    return { create, close, list } ;
+    return { create, close, list, show} ;
 };
