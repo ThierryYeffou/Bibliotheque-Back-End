@@ -4,7 +4,7 @@ module.exports = (app) =>{
 
 
     // Fonction show pour afficher un un emprunt : 
-    function show(req, res) {
+    function showOne(req, res) {
         Subscriber.findById(req.body.id, function (err, docs) {
 
             if(err) res.send(err);  
@@ -39,5 +39,15 @@ module.exports = (app) =>{
             res.send('Deleted successfully!');
         })
     }
-    return { create, list, show, remove} ;
+
+    function updateOne(req,res){
+        Subscriber.updateOne(req.body.id,{$set: req.body},(err,doc) => {
+            if (err) {
+                res.send(err);
+              } else {
+                res.send(doc);
+              }
+        });
+    }
+    return { create, list, showOne, remove, updateOne } ;
 };
