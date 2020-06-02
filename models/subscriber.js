@@ -3,12 +3,12 @@ var Schema = mongoose.Schema;
 
 var subscriberSchema = new Schema({
 
-    lastName : String,
-    firstName: String,
+    lastName : { type: String, required: true},
+    firstName: { type: String, required: true},
     mail     : String,
-    phone    : String,
-    adress   : String,
-    birthDate: Date,
+    phone    : { type: String, required: true},
+    adress   : { type: String, required: true},
+    birthDate: { type: Date, required: true},
     birthTown: String,
 });
 
