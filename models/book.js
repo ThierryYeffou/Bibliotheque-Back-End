@@ -18,7 +18,7 @@ const bookSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Category',
         required: true
-    },
+    }
 });
 
 module.exports = mongoose.model("Book", bookSchema);

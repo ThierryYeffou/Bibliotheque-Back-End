@@ -1,6 +1,6 @@
 module.exports = (app) =>{
 
-    let Borrowing = require('../models/Borrowing');
+    let Borrowing = app.models.Borrowing;
 
 
     // Fonction show pour afficher un un emprunt : 

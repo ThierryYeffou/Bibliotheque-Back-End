@@ -1,6 +1,6 @@
 module.exports = (app) =>{
 
-    let Category = require('../models/Category');
+    let Category = app.models.Category;
 
 
     // Fonction showOne pour afficher un un emprunt : 
