@@ -27,7 +27,7 @@ module.exports = (app) =>{
         Borrowing.findByIdAndUpdate(
             req.body.id,
             {
-                realReturnDate: req.body.realReturnDate
+                $set: req.body.realReturnDate
             },
             (err, data) => {
                 if (err) console.log(err);
