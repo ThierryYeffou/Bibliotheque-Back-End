@@ -24,11 +24,8 @@ module.exports = (app) =>{
     }
 
     function remove(req,res){
-        Category.findByIdAndUpdate(
+        Category.findByIdAndDelete(
             req.body.id,
-            {
-                $set: req.body.realReturnDate
-            },
             (err, data) => {
                 if (err) console.log(err);
                 else res.send(data);
@@ -46,5 +43,15 @@ module.exports = (app) =>{
             }
         })
     };
-    return { create, remove, list, showOne} ;
+
+    function updateOne(req,res){
+        Category.updateOne({_id: req.body.id},{$set: req.body},(err,doc) => {
+            if (err) {
+                res.send(err);
+              } else {
+                res.send(doc);
+              }
+        });
+    }
+    return { create, remove, list, showOne, updateOne} ;
 };
