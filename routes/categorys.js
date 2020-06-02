@@ -1,9 +1,9 @@
 const router = require("express").Router();
 module.exports = (app) => {
    
-    router.post("/show", app.controllers.categorys.show);
+    router.post("/showOne", app.controllers.categorys.showOne);
     router.post('/create', app.controllers.categorys.create);
-    router.post("/close", app.controllers.categorys.close);
+    router.post("/remove", app.controllers.categorys.remove);
     router.get("/list", app.controllers.categorys.list);
     
     return router;
