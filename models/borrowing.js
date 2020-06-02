@@ -2,7 +2,12 @@ const mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var borrowingSchema = new Schema({
-    books : [String],
+    books : [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Book'
+        },
+    ],
     borrowingDate : Date,
     maxReturnDate : Date,
     realReturnDate: Date,
