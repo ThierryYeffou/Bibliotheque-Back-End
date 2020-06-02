@@ -3,8 +3,8 @@ module.exports = (app) =>{
     let Borrowing = require('../models/Borrowing');
 
 
-    // Fonction show pour afficher un Livre : 
-    function getById(req, res) {
+    // Fonction show pour afficher un un emprunt : 
+    function show(req, res) {
         Musique.findById(req.body.id, function (err, docs) {
 
             if(err) res.send(err);  
