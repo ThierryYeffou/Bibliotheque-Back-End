@@ -1,5 +1,6 @@
 // Copier la Partie Body des requetes  pour les partager via gitHub 
-Create :
+
+// Create :
 [
 	{
 		"user": "5ed661e5063c2f3b54503acc",
@@ -21,12 +22,17 @@ Create :
 	}
 ]
 
-Close :
-{
-	"id": "5ed64233764b9e0a18401634",
-	"realReturnDate": "2020-06-02"
-}
-Show :
-{
-	"id": "5ed63e6a6a1b8f04ac8bf341"
-}
+// Close :
+[ 
+	{
+		"id": "5ed64233764b9e0a18401634",
+		"realReturnDate": "2020-06-02"
+	}
+]
+
+[
+	// Show :
+	{
+		"id": "5ed63e6a6a1b8f04ac8bf341"
+	}
+]

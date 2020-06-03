@@ -37,7 +37,10 @@
 		"birthTown": "Alaska"
 	}	
 ]
-Remove :
-{
-	"id": "5ed6612f063c2f3b54503acb"
-}
+
+// Remove :
+[ 
+	{
+		"id": "5ed6612f063c2f3b54503acb"
+	}
+]
