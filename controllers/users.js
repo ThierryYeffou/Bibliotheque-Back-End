@@ -1,6 +1,23 @@
 module.exports = (app) =>{
 
     let User = app.models.User;
+    const bcrypt = require ('bcrypt') ;
+    //const saltRounds = 10 ;
+
+    /*function encode(plainPassword){
+        bcrypt.hash( plainPassword ,  10 , function( err , hash ){
+
+            if(err){
+                console.log(err);
+            } else {
+                console.log(hash);
+                return hash;
+                
+            }
+        })
+        
+    }*/
+
 
     /*function isConnected(user){
         if (User.find({mail: user.mail, password: user.password},function (err, data) {
@@ -23,18 +40,19 @@ module.exports = (app) =>{
             } else {
                 if (!user) res.send("L\'adresse mail renseignée est incorrecte.");
                 else { 
-                    User.findOne({mail: mail, password: password}, function (err, user){
+                    bcrypt.compareSync(password,user.password) ? res.send("Bienvenue") : res.send("L\'adresse mail et le mot de passe ne correspondent pas.");
+                    /*User.findOne({mail: mail, password: password}, function (err, user){
                         if (err){
                             res.send(err);
                         } else {
                             if (!user) res.send("L\'adresse mail et le mot de passe ne correspondent pas."); 
                             else res.send("Bienvenue");
-                        }
-                    })
+                        }*/
+                    }
 
               }
             }  
-        }) 
+        )
     } 
      
             
@@ -51,13 +69,23 @@ module.exports = (app) =>{
     }
     
     function create(req, res){
-        let newUser = req.body
-        User.create(newUser, (err, user) =>{
+        let newUser = req.body;
+        let plainPassword = req.body.password;
+        bcrypt.hash( plainPassword ,  10 , function( err , hash ){
+
             if(err){
-                res.send(err)
+                console.log(err);
+            } else {
+                newUser.password = hash;
+                User.create(newUser, (err, user) =>{
+                    if(err){
+                        res.send(err)
+                    }
+                    res.send(user);
+                })
+                
             }
-            res.send(user);
-        })
+        });
     }
 
     function list(req,res){
