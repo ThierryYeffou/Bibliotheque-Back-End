@@ -46,5 +46,5 @@ module.exports = (app) =>{
             }
         })
     };
-    return { create, close, list, show} ;
+    return { create, close, list, show } ;
 };
