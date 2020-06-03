@@ -36,6 +36,22 @@ module.exports = (app) =>{
         );
     }
 
+    function userBorrowings(req,res){
+        let user = req.body.user;
+        Borrowing.find(
+            {
+              user: user
+            },
+            function (err, borrowing) {
+                if (err) {
+                  res.send(err);
+                } else {
+                  res.send(borrowing);
+                }
+            }
+        )
+    }
+
 
     function list(req,res){
         Borrowing.find({}, function (err, borrowing) {
@@ -46,5 +62,5 @@ module.exports = (app) =>{
             }
         })
     };
-    return { create, close, list, show } ;
+    return { create, close, list, show, userBorrowings } ;
 };

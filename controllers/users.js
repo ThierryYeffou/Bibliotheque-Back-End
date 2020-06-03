@@ -2,35 +2,7 @@ module.exports = (app) =>{
 
     let User = app.models.User;
     const bcrypt = require ('bcrypt') ;
-    //const saltRounds = 10 ;
-
-    /*function encode(plainPassword){
-        bcrypt.hash( plainPassword ,  10 , function( err , hash ){
-
-            if(err){
-                console.log(err);
-            } else {
-                console.log(hash);
-                return hash;
-                
-            }
-        })
-        
-    }*/
-
-
-    /*function isConnected(user){
-        if (User.find({mail: user.mail, password: user.password},function (err, data) {
-            if (err) {
-              res.send(err);
-            } else {
-              res.send(data);
-            }
-        }
-        )) {user = 
-            return true; }
-        return false;
-    } */
+    
     function connect(req, res){
         let mail = req.body.mail;
         let password = req.body.password;

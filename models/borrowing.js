@@ -17,12 +17,12 @@ var borrowingSchema = new Schema({
         required: true
     },
     realReturnDate: Date,
-    user: [
+    user: 
         {
             type: Schema.Types.ObjectId,
             ref: 'User'
         },
-    ],
+    
 });
 
 module.exports = mongoose.model("Borrowing", borrowingSchema);
