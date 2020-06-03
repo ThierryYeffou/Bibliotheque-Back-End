@@ -40,15 +40,13 @@ module.exports = (app) =>{
             } else {
                 if (!user) res.send("L\'adresse mail renseignée est incorrecte.");
                 else { 
-                    bcrypt.compareSync(password,user.password) ? res.send("Bienvenue") : res.send("L\'adresse mail et le mot de passe ne correspondent pas.");
-                    /*User.findOne({mail: mail, password: password}, function (err, user){
-                        if (err){
-                            res.send(err);
-                        } else {
-                            if (!user) res.send("L\'adresse mail et le mot de passe ne correspondent pas."); 
-                            else res.send("Bienvenue");
-                        }*/
-                    }
+                    bcrypt.compare(password, user.password, (err, _user) => {
+                        if (err) console.log(err);
+                        else {
+                            _user ? res.send("Bienvenue") : res.send("L\'adresse mail et le mot de passe ne correspondent pas.")
+                        }
+                    })
+                }
 
               }
             }  
