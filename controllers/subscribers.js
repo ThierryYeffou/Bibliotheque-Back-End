@@ -1,6 +1,6 @@
 module.exports = (app) =>{
 
-    let Subscriber = require('../models/Subscriber');
+    let Subscriber = app.models.Subscriber;
 
 
     // Fonction show pour afficher un un emprunt : 
@@ -41,7 +41,7 @@ module.exports = (app) =>{
     }
 
     function updateOne(req,res){
-        Subscriber.updateOne(req.body.id,{$set: req.body},(err,doc) => {
+        Subscriber.updateOne({_id: req.body.id},{$set: req.body},(err,doc) => {
             if (err) {
                 res.send(err);
               } else {

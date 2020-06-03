@@ -1,6 +1,6 @@
 module.exports = (app) =>{
 
-    let Book = require('../models/Book');
+    let Book = app.models.Book;
 
 
     // Fonction show pour afficher un un emprunt : 
