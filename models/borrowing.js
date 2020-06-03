@@ -17,10 +17,10 @@ var borrowingSchema = new Schema({
         required: true
     },
     realReturnDate: Date,
-    subscriber: [
+    user: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Subscriber'
+            ref: 'User'
         },
     ],
 });
