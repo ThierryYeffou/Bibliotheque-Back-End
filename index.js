@@ -16,7 +16,7 @@ require("./routes")(app);
 //         borrowingDate : new Date(),
 //         maxReturnDate : new Date(),
 //         realReturnDate : new Date(),
-//         subscriber : ["Jean1 ", "Taldi"]
+//         user : ["Jean1 ", "Taldi"]
 //      })
 // borrowing.save();
 

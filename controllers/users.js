@@ -1,6 +1,6 @@
 module.exports = (app) =>{
 
-    let User = app.models.user;
+    let User = app.models.User;
 
 
     // Fonction show pour afficher un un emprunt : 
